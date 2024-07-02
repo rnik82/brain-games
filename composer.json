@@ -4,6 +4,9 @@
     "description": "brain-games",
     "license": "MIT",
     "autoload": {
+    	 "files": [
+            "src/Cli.php"
+        ],
         "psr-4": {
             "Hexlet\\Code\\": "src/"
         }
@@ -14,5 +17,7 @@
             "email": "rnik82@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "wp-cli/php-cli-tools": "^0.11.22"
+    }
 }
