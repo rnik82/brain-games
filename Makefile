@@ -9,3 +9,8 @@ validate: # проверяет файл composer.json на ошибки
 	
 lint: # проверка кода на соответствие стандартам
 	composer exec --verbose phpcs -- --standard=PSR12 src bin
+
+brain-even:
+	./bin/brain-even
+
+.PHONY: brain-even
