@@ -13,4 +13,7 @@ lint: # проверка кода на соответствие стандарт
 brain-even:
 	./bin/brain-even
 
-.PHONY: brain-even
+brain-calc:
+	./bin/brain-calc
+
+.PHONY: brain-even brain-calc

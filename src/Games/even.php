@@ -4,6 +4,7 @@ namespace BrainGames\Even;
 
 use function cli\line;
 use function cli\prompt;
+use function BrainGames\Engine\gameCourse;
 
 function isEven($number)
 {
@@ -16,19 +17,14 @@ function brainEven()
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    $roundCount = 0;
-    while ($roundCount < 3) {
+    for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber = random_int(1, 99);
-        line("Question: , %s!", $randomNumber);
-        $reply = prompt('Your answer: ');
         $rightReply = isEven($randomNumber) ? 'yes' : 'no';
-        if ($reply !== $rightReply) {
-            line("%s is wrong answer ;(. Correct answer was %s.", $reply, $rightReply);
+        $isWrongReply = gameCourse([$rightReply, $randomNumber]);
+        if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;
         }
-        line("Correct!");
-        $roundCount++;
     }
     line("Congratulations, %s!", $name);
 }
