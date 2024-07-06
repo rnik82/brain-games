@@ -16,4 +16,7 @@ brain-even:
 brain-calc:
 	./bin/brain-calc
 
-.PHONY: brain-even brain-calc
+brain-gcd:
+	./bin/brain-gcd
+
+.PHONY: brain-even brain-calc brain-gcd

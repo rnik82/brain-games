@@ -8,8 +8,8 @@ use function cli\prompt;
 function gameCourse($data)
 {
     [$rightReply, $randomNumber1] = $data;
-    $operator = $data[2] ?? '';
-    $randomNumber2 = $data[3] ?? '';
+    $randomNumber2 = $data[2] ?? '';
+    $operator = $data[3] ?? '';
     line("Question: %s %s %s", $randomNumber1, $operator, $randomNumber2);
     $reply = prompt('Your answer');
     if ($reply !== (string)$rightReply) {
