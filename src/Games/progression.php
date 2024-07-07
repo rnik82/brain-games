@@ -3,8 +3,8 @@
 namespace BrainGames\Progression;
 
 use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\gameCourse;
+use function BrainGames\Cli\greeting;
 
 function getProgression($start, $step)
 {
@@ -18,9 +18,7 @@ function getProgression($start, $step)
 
 function brainProgression()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = greeting();
     line('What number is missing in the progression?');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $step = random_int(1, 10);
@@ -28,7 +26,7 @@ function brainProgression()
         $progression = getProgression($start, $step);
         $randomIndex = array_rand($progression);
         [$rightReply] = array_splice($progression, $randomIndex, 1, '..');
-        $isWrongReply = gameCourse((string)$rightReply, implode(' ', $progression));
+        $isWrongReply = gameCourse($rightReply, implode(' ', $progression));
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;

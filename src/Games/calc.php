@@ -3,8 +3,8 @@
 namespace BrainGames\Calc;
 
 use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\gameCourse;
+use function BrainGames\Cli\greeting;
 
 function calc($operand1, $operand2, $operator)
 {
@@ -23,9 +23,7 @@ function calc($operand1, $operand2, $operator)
 
 function brainCalc()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = greeting();
     line('What is the result of the expression?');
     $operators = ['+', '-', '*'];
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {

@@ -22,4 +22,7 @@ brain-gcd:
 brain-progression:
 	./bin/brain-progression
 
-.PHONY: brain-even brain-calc brain-gcd brain-progression
+brain-prime:
+	./bin/brain-prime
+
+.PHONY: brain-even brain-calc brain-gcd brain-progression brain-prime

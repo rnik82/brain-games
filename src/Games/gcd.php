@@ -3,8 +3,8 @@
 namespace BrainGames\Gcd;
 
 use function cli\line;
-use function cli\prompt;
 use function BrainGames\Engine\gameCourse;
+use function BrainGames\Cli\greeting;
 
 function getGcd($num1, $num2)
 {
@@ -20,9 +20,7 @@ function getGcd($num1, $num2)
 
 function brainGcd()
 {
-    line('Welcome to the Brain Game!');
-    $name = prompt('May I have your name?');
-    line("Hello, %s!", $name);
+    $name = greeting();
     line('Find the greatest common divisor of given numbers.');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber1 = random_int(1, 99);
