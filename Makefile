@@ -19,4 +19,7 @@ brain-calc:
 brain-gcd:
 	./bin/brain-gcd
 
-.PHONY: brain-even brain-calc brain-gcd
+brain-progression:
+	./bin/brain-progression
+
+.PHONY: brain-even brain-calc brain-gcd brain-progression

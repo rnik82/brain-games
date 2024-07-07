@@ -23,12 +23,12 @@ function brainGcd()
     line('Welcome to the Brain Game!');
     $name = prompt('May I have your name?');
     line("Hello, %s!", $name);
-    line('What is the result of the expression?');
+    line('Find the greatest common divisor of given numbers.');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber1 = random_int(1, 99);
         $randomNumber2 = random_int(1, 99);
         $rightReply = getGcd($randomNumber1, $randomNumber2);
-        $isWrongReply = gameCourse([$rightReply, $randomNumber1, $randomNumber2]);
+        $isWrongReply = gameCourse($rightReply, $randomNumber1, $randomNumber2);
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;

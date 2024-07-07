@@ -20,7 +20,7 @@ function brainEven()
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber = random_int(1, 99);
         $rightReply = isEven($randomNumber) ? 'yes' : 'no';
-        $isWrongReply = gameCourse([$rightReply, $randomNumber]);
+        $isWrongReply = gameCourse($rightReply, $randomNumber);
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;
