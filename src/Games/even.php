@@ -2,11 +2,13 @@
 
 namespace BrainGames\Even;
 
+use IntlChar;
+
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
 use function BrainGames\Cli\greet;
 
-function isEven($number)
+function isEven(int $number)
 {
     return $number % 2 === 0;
 }

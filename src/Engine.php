@@ -5,7 +5,7 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gameCourse(...$data)
+function gameCourse(array $data)
 {
     [$rightReply, $expression] = $data;
     line("Question: %s", $expression);

@@ -6,7 +6,7 @@ use function cli\line;
 use function BrainGames\Engine\gameCourse;
 use function BrainGames\Cli\greet;
 
-function getGcd($num1, $num2)
+function getGcd(int $num1, int $num2)
 {
     while ($num1 > 0 && $num2 > 0) {
         if ($num1 > $num2) {
