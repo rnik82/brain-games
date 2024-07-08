@@ -26,7 +26,7 @@ function brainProgression()
         $progression = getProgression($start, $step);
         $randomIndex = array_rand($progression);
         [$rightReply] = array_splice($progression, $randomIndex, 1, '..');
-        $isWrongReply = gameCourse($rightReply, implode(' ', $progression));
+        $isWrongReply = gameCourse((string)$rightReply, implode(' ', $progression));
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;

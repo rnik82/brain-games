@@ -6,7 +6,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/7bddc2c0d162ff0074a0/maintainability)](https://codeclimate.com/github/rnik82/php-project-45/maintainability)
 
 ### To install:
-    composer require global rnik82/php_braingames
+    composer require global hexlet/code
 
 ### Brain-games training project
 Project brain-games has five console games for mind's training (see examples below)

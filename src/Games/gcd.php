@@ -25,8 +25,9 @@ function brainGcd()
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber1 = random_int(1, 99);
         $randomNumber2 = random_int(1, 99);
-        $rightReply = getGcd($randomNumber1, $randomNumber2);
-        $isWrongReply = gameCourse($rightReply, $randomNumber1, $randomNumber2);
+        $expression = "{$randomNumber1} {$randomNumber2}";
+        $rightReply = (string)getGcd($randomNumber1, $randomNumber2);
+        $isWrongReply = gameCourse($rightReply, $expression);
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;
