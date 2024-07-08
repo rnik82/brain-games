@@ -18,9 +18,9 @@ function brainEven()
     $name = greet();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
-        $randomNumber = (string)random_int(1, 100);
+        $randomNumber = random_int(1, 100);
         $rightReply = isEven($randomNumber) ? 'yes' : 'no';
-        $isWrongReply = gameCourse($rightReply, $randomNumber);
+        $isWrongReply = gameCourse($rightReply, (string)$randomNumber);
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;
