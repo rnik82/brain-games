@@ -5,9 +5,8 @@ namespace BrainGames\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function gameCourse(array $data)
+function gameCourse(string $rightReply, string $expression)
 {
-    [$rightReply, $expression] = $data;
     line("Question: %s", $expression);
     $reply = prompt('Your answer');
     if ($reply !== $rightReply) {

@@ -32,7 +32,7 @@ function brainCalc()
         $randomNumber2 = random_int(1, 10);
         $expression = "{$randomNumber1} {$operator} {$randomNumber2}";
         $rightReply = (string)calc($randomNumber1, $randomNumber2, $operator);
-        $isWrongReply = gameCourse([$rightReply, $expression]);
+        $isWrongReply = gameCourse($rightReply, $expression);
         if ($isWrongReply) {
             line("Let's try again, %s!", $name);
             return;
