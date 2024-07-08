@@ -21,7 +21,7 @@ function brainPrime()
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
     $name = greet();
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
-        $randomNumber = (string)random_int(1, 99);
+        $randomNumber = random_int(1, 99);
         $rightReply = isPrime($randomNumber) ? 'yes' : 'no';
         $isWrongReply = gameCourse($rightReply, $randomNumber);
         if ($isWrongReply) {
