@@ -4,7 +4,7 @@ namespace BrainGames\Even;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greeting;
+use function BrainGames\Cli\greet;
 
 function isEven($number)
 {
@@ -13,7 +13,7 @@ function isEven($number)
 
 function brainEven()
 {
-    $name = greeting();
+    $name = greet();
     line('Answer "yes" if the number is even, otherwise answer "no".');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber = random_int(1, 99);

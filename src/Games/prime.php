@@ -4,7 +4,7 @@ namespace BrainGames\Prime;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greeting;
+use function BrainGames\Cli\greet;
 
 function isPrime($number)
 {
@@ -18,8 +18,8 @@ function isPrime($number)
 
 function brainPrime()
 {
-    $name = greeting();
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
+    $name = greet();
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber = random_int(1, 99);
         $rightReply = isPrime($randomNumber) ? 'yes' : 'no';

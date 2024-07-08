@@ -4,7 +4,7 @@ namespace BrainGames\Progression;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greeting;
+use function BrainGames\Cli\greet;
 
 function getProgression($start, $step)
 {
@@ -18,7 +18,7 @@ function getProgression($start, $step)
 
 function brainProgression()
 {
-    $name = greeting();
+    $name = greet();
     line('What number is missing in the progression?');
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $step = random_int(1, 10);

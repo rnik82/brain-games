@@ -4,7 +4,7 @@ namespace BrainGames\Calc;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greeting;
+use function BrainGames\Cli\greet;
 
 function calc($operand1, $operand2, $operator)
 {
@@ -23,7 +23,7 @@ function calc($operand1, $operand2, $operator)
 
 function brainCalc()
 {
-    $name = greeting();
+    $name = greet();
     line('What is the result of the expression?');
     $operators = ['+', '-', '*'];
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
