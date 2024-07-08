@@ -9,7 +9,7 @@ use function BrainGames\Cli\greet;
 function getProgression($start, $step)
 {
     $progression = [];
-    for($i = 0, $j = $start; $i < 10; $i++, $j += $step) {
+    for ($i = 0, $j = $start; $i < 10; $i++, $j += $step) {
         $progression[] = $j;
     }
     return $progression;
