@@ -1,10 +1,8 @@
 <?php
 
-namespace BrainGames\Calc;
+namespace BrainGames\Games\Calc;
 
-use function cli\line;
 use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greet;
 
 function calc(int $operand1, int $operand2, string $operator)
 {
@@ -16,27 +14,23 @@ function calc(int $operand1, int $operand2, string $operator)
         case '*':
             return $operand1 * $operand2;
         default:
-            return null;
+            throw new \Exception("Unknown operator: '{$operator}'!");
     }
 }
 
 
 function brainCalc()
 {
-    $name = greet();
-    line('What is the result of the expression?');
+    $question = 'What is the result of the expression?';
     $operators = ['+', '-', '*'];
+    $dataForGame = [];
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $operator = $operators[random_int(0, 2)];
         $randomNumber1 = random_int(1, 25);
         $randomNumber2 = random_int(1, 10);
         $expression = "{$randomNumber1} {$operator} {$randomNumber2}";
-        $rightReply = (string)calc($randomNumber1, $randomNumber2, $operator);
-        $isWrongReply = gameCourse($rightReply, $expression);
-        if ($isWrongReply) {
-            line("Let's try again, %s!", $name);
-            return;
-        }
+        $answer = (string)calc($randomNumber1, $randomNumber2, $operator);
+        $dataForGame[] = [$expression, $answer];
     }
-    line("Congratulations, %s!", $name);
+    gameCourse($question, $dataForGame);
 }

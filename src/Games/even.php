@@ -1,8 +1,6 @@
 <?php
 
-namespace BrainGames\Even;
-
-use IntlChar;
+namespace BrainGames\Games\Even;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
@@ -15,16 +13,12 @@ function isEven(int $number)
 
 function brainEven()
 {
-    $name = greet();
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    $question = 'Answer "yes" if the number is even, otherwise answer "no".';
+    $dataForGame = [];
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber = random_int(1, 100);
-        $rightReply = isEven($randomNumber) ? 'yes' : 'no';
-        $isWrongReply = gameCourse($rightReply, (string)$randomNumber);
-        if ($isWrongReply) {
-            line("Let's try again, %s!", $name);
-            return;
-        }
+        $answer = isEven($randomNumber) ? 'yes' : 'no';
+        $dataForGame[] = [(string)$randomNumber, $answer];
     }
-    line("Congratulations, %s!", $name);
+    gameCourse($question, $dataForGame);
 }

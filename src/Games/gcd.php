@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Gcd;
+namespace BrainGames\Games\Gcd;
 
 use function cli\line;
 use function BrainGames\Engine\gameCourse;
@@ -20,18 +20,14 @@ function getGcd(int $num1, int $num2)
 
 function brainGcd()
 {
-    $name = greet();
-    line('Find the greatest common divisor of given numbers.');
+    $question = 'Find the greatest common divisor of given numbers.';
+    $dataForGame = [];
     for ($roundCount = 0; $roundCount < 3; $roundCount++) {
         $randomNumber1 = random_int(1, 99);
         $randomNumber2 = random_int(1, 99);
         $expression = "{$randomNumber1} {$randomNumber2}";
-        $rightReply = (string)getGcd($randomNumber1, $randomNumber2);
-        $isWrongReply = gameCourse($rightReply, $expression);
-        if ($isWrongReply) {
-            line("Let's try again, %s!", $name);
-            return;
-        }
+        $answer = (string)getGcd($randomNumber1, $randomNumber2);
+        $dataForGame[] = [$expression, $answer];
     }
-    line("Congratulations, %s!", $name);
+    gameCourse($question, $dataForGame);
 }
