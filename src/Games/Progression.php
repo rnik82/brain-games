@@ -2,9 +2,7 @@
 
 namespace BrainGames\Games\Progression;
 
-use function cli\line;
-use function BrainGames\Engine\gameCourse;
-use function BrainGames\Cli\greet;
+use function BrainGames\Engine\play;
 
 function getProgression(int $start, int $step)
 {
@@ -16,17 +14,18 @@ function getProgression(int $start, int $step)
 }
 
 
-function brainProgression()
+function run()
 {
     $question = 'What number is missing in the progression?';
-    $dataForGame = [];
-    for ($roundCount = 0; $roundCount < 3; $roundCount++) {
+    $data = [];
+    $roundsCount = 3;
+    for ($i = 1; $i <= $roundsCount; $i++) {
         $step = random_int(1, 10);
         $start = random_int(1, 30);
         $progression = getProgression($start, $step);
         $randomIndex = random_int(0, 9);
         [$answer] = array_splice($progression, $randomIndex, 1, '..');
-        $dataForGame[] = [implode(' ', $progression), (string)$answer];
+        $data[] = [implode(' ', $progression), (string)$answer];
     }
-    gameCourse($question, $dataForGame);
+    play($question, $data);
 }

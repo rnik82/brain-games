@@ -6,11 +6,11 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\greet;
 
-function gameCourse(string $question, array $roundsForGame)
+function play(string $question, array $rounds)
 {
     $name = greet();
     line($question);
-    foreach ($roundsForGame as [$expression, $answer]) {
+    foreach ($rounds as [$expression, $answer]) {
         line("Question: %s", $expression);
         $userReply = prompt('Your answer');
         if ($userReply !== $answer) {
