@@ -4,6 +4,8 @@ namespace BrainGames\Games\Prime;
 
 use function BrainGames\Engine\play;
 
+use const BrainGames\Engine\ROUNDS;
+
 function isPrime(int $number)
 {
     if ($number < 2) {
@@ -21,7 +23,7 @@ function run()
 {
     $question = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $data = [];
-    $roundsCount = 3;
+    $roundsCount = ROUNDS;
     for ($i = 1; $i <= $roundsCount; $i++) {
         $randomNumber = random_int(1, 99);
         $answer = isPrime($randomNumber) ? 'yes' : 'no';

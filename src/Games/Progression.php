@@ -4,6 +4,8 @@ namespace BrainGames\Games\Progression;
 
 use function BrainGames\Engine\play;
 
+use const BrainGames\Engine\ROUNDS;
+
 function getProgression(int $start, int $step)
 {
     $progression = [];
@@ -20,7 +22,7 @@ function run()
 {
     $question = 'What number is missing in the progression?';
     $data = [];
-    $roundsCount = 3;
+    $roundsCount = ROUNDS;
     for ($i = 1; $i <= $roundsCount; $i++) {
         $step = random_int(1, 10);
         $start = random_int(1, 30);

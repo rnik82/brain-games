@@ -4,6 +4,8 @@ namespace BrainGames\Games\Calc;
 
 use function BrainGames\Engine\play;
 
+use const BrainGames\Engine\ROUNDS;
+
 function calc(int $operand1, int $operand2, string $operator)
 {
     switch ($operator) {
@@ -24,7 +26,7 @@ function run()
     $question = 'What is the result of the expression?';
     $operators = ['+', '-', '*'];
     $data = [];
-    $roundsCount = 3;
+    $roundsCount = ROUNDS;
     for ($i = 1; $i <= $roundsCount; $i++) {
         $operator = $operators[array_rand($operators)];
         $randomNumber1 = random_int(1, 25);

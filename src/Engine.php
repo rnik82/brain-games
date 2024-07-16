@@ -6,6 +6,8 @@ use function cli\line;
 use function cli\prompt;
 use function BrainGames\Cli\greet;
 
+const ROUNDS = 3;
+
 function play(string $question, array $rounds)
 {
     $name = greet();
