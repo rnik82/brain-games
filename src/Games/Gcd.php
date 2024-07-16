@@ -20,7 +20,8 @@ function run()
 {
     $question = 'Find the greatest common divisor of given numbers.';
     $data = [];
-    for ($roundCount = 0; $roundCount < 3; $roundCount++) {
+    $roundsCount = 3;
+    for ($i = 1; $i <= $roundsCount; $i++) {
         $randomNumber1 = random_int(1, 99);
         $randomNumber2 = random_int(1, 99);
         $expression = "{$randomNumber1} {$randomNumber2}";

@@ -24,8 +24,9 @@ function run()
     $question = 'What is the result of the expression?';
     $operators = ['+', '-', '*'];
     $data = [];
-    for ($roundCount = 0; $roundCount < 3; $roundCount++) {
-        $operator = $operators[random_int(0, 2)];
+    $roundsCount = 3;
+    for ($i = 1; $i <= $roundsCount; $i++) {
+        $operator = $operators[array_rand($operators)];
         $randomNumber1 = random_int(1, 25);
         $randomNumber2 = random_int(1, 10);
         $expression = "{$randomNumber1} {$operator} {$randomNumber2}";

@@ -7,8 +7,10 @@ use function BrainGames\Engine\play;
 function getProgression(int $start, int $step)
 {
     $progression = [];
-    for ($i = 0, $j = $start; $i < 10; $i++, $j += $step) {
-        $progression[] = $j;
+    $current = $start;
+    for ($i = 0; $i < 10; $i++) {
+        $progression[] = $current;
+        $current += $step;
     }
     return $progression;
 }

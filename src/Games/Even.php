@@ -13,7 +13,8 @@ function run()
 {
     $question = 'Answer "yes" if the number is even, otherwise answer "no".';
     $data = [];
-    for ($roundCount = 0; $roundCount < 3; $roundCount++) {
+    $roundsCount = 3;
+    for ($i = 1; $i <= $roundsCount; $i++) {
         $randomNumber = random_int(1, 100);
         $answer = isEven($randomNumber) ? 'yes' : 'no';
         $data[] = [(string)$randomNumber, $answer];
