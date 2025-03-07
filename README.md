@@ -5,26 +5,63 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/7bddc2c0d162ff0074a0/maintainability)](https://codeclimate.com/github/rnik82/php-project-45/maintainability)
 
-### To install:
-    composer require global hexlet/code
+## About the Project
 
-### Brain-games training project
-Project brain-games has five console games for mind's training (see examples below)
+"Brain-Games" is a collection of five console-based games designed following the principle of popular brain-training mobile apps. Each game poses questions that require correct answers. After three correct answers, the game is considered completed. Incorrect answers end the game and prompt the player to try again.
+
+## Requirements:
+- Linux
+- PHP 8.3
+- Composer
 
 
-### Run games
+## Installation Instructions
 
-    Brain-even
-<a href=https://asciinema.org/a/666681 target="_blank"><img src="https://asciinema.org/a/666681.svg" /></a>
+Follow these steps sequentially:
 
-    Brain-calc
-<a href=https://asciinema.org/a/666938 target="_blank"><img src="https://asciinema.org/a/666938.svg" /></a>
+1. Clone the repository:
+   ```bash
+    git clone git@github.com:rnik82/brain-games.git brain-games
+    ```
+   
+2. Navigate to the project directory:
+   ```bash
+    cd brain-games
+    ```
+   
+3. Install dependencies:
+   ```bash
+    make install
+    ```
+   
+4. Grant execute permissions to the files in the bin directory:
+   ``bash
+    chmod +x ./bin/*
+    ```
 
-    Brain-gcd
-<a href=https://asciinema.org/a/667041 target="_blank"><img src="https://asciinema.org/a/667041.svg" /></a>
+## Launching the Games
 
-    Brain-progression
-<a href=https://asciinema.org/a/667133 target="_blank"><img src="https://asciinema.org/a/667133.svg" /></a>
+Commands to launch the games:
 
-    Brain-prime
-<a href=https://asciinema.org/a/667149 target="_blank"><img src="https://asciinema.org/a/667149.svg" /></a>
+- `make brain-even` — start the "Even Check" game.
+- `make brain-calc` — start the "Calculator" game.
+- `make brain-gcd` — start the "Greatest Common Divisor" game.
+- `make brain-progression` — start the "Arithmetic Progression" game.
+- `make brain-prime` — start the "Is it a Prime Number?" game.
+
+## Game Demonstrations
+
+### Brain-even
+[![asciicast](https://asciinema.org/a/666681.svg)](https://asciinema.org/a/666681)
+
+### Brain-calc
+[![asciicast](https://asciinema.org/a/666938.svg)](https://asciinema.org/a/666938)
+
+### Brain-gcd
+[![asciicast](https://asciinema.org/a/667041.svg)](https://asciinema.org/a/667041)
+
+### Brain-progression
+[![asciicast](https://asciinema.org/a/667133.svg)](https://asciinema.org/a/667133)
+
+### Brain-prime
+[![asciicast](https://asciinema.org/a/667149.svg)](https://asciinema.org/a/667149)
