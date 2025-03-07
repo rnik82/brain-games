@@ -35,7 +35,7 @@ Follow these steps sequentially:
     ```
    
 4. Grant execute permissions to the files in the bin directory:
-   ``bash
+   ```bash
     chmod +x ./bin/*
     ```
 
